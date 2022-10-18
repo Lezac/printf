@@ -18,7 +18,6 @@ if (format == NULL)
 return (-1);
 va_start(list, format);
 for (i = 0; format && format[i] != '\0'; i++)
-{
 if (format[i] != '%')
 {
 buffer[buff_ind++] = format[i];
@@ -44,10 +43,12 @@ return (-1);
 printed_chars += printed;
 }
 }
-print_buffer(buffer, &buff_ind);
-va_end(list);
+print_buffer (buffer, (&buff_ind));
+va_end (list);
 return (printed_chars);
 }
+
+
 
 /**
  * print_buffer - Prints the contents of the buffer if it exist
