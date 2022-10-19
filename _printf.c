@@ -18,11 +18,11 @@ if (format == NULL)
 return (-1);
 va_start(list, format);
 for (i = 0; format && format[i] != '\0'; i++)
-{
 if (format[i] != '%')
 {
 buffer[buff_ind++] = format[i];
 if (buff_ind == BUFF_SIZE)
+{
 print_buffer(buffer, &buff_ind);
 
 /* write(1, &format[i], 1);*/
@@ -49,6 +49,8 @@ va_end(list);
 return (printed_chars);
 }
 
+
+
 /**
  * print_buffer - Prints the contents of the buffer if it exist
  * @buffer: Array of chars
@@ -61,3 +63,4 @@ if (*buff_ind > 0)
 write(1, &buffer[0], *buff_ind);
 *buff_ind = 0;
 }
+
